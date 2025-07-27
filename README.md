@@ -20,7 +20,7 @@ Trained over 20 epochs, QClassiQ achieves an impressive **93.3% accuracy**, outp
 
 ## 🚀 Getting Started
 
-### 1. Clone the repo
+1. Clone the repo
 
 git clone https://github.com/aaryanpawar16/QClassiQ.git
 cd QClassiQ
