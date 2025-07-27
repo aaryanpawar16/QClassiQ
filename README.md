@@ -39,10 +39,15 @@ streamlit run app.py
 📂 Project Structure
 QClassiQ/
 ├── qclassiq.py          # Hybrid model training script
+
 ├── app.py               # Streamlit UI
+
 ├── scaler.pkl           # Saved StandardScaler
+
 ├── hybrid_model.pt      # Trained PyTorch model
+
 ├── requirements.txt     # Dependencies
+
 └── README.md
 
 ✨ Credits
