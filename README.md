@@ -1,4 +1,6 @@
 # QClassiQ - Hybrid Quantum-Classical ML Model 🧠⚛️
+![QClassiQ](./logo.png)
+
 
 QClassiQ is a hybrid machine learning model that combines the strengths of **quantum computing** (via PennyLane) and **classical deep learning** (via PyTorch) to classify the famous **Iris flower dataset**.
 
