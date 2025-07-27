@@ -14,7 +14,7 @@ Trained over 20 epochs, QClassiQ achieves an impressive **96.67% accuracy**, out
 - 🔗 Classical Neural Network layers for feature fusion
 - ⚗️ Quantum-Classical hybrid training loop
 - 📊 Trained on Iris dataset (3-class classification)
-- 🧠 Achieves >93% test accuracy
+- 🧠 Achieves >96% test accuracy
 - 📈 Live Demo with **Streamlit**
 - 🎥 AI-generated explainer video support
 
@@ -58,3 +58,5 @@ QClassiQ/
 Built with PennyLane, PyTorch, Streamlit
 
 Developed by Aaryan Pawar
+
+Watch demo on YouTube [QClassiQ](https://www.youtube.com/watch?v=1tdKmCQVPuc)
