@@ -4,7 +4,7 @@
 
 QClassiQ is a hybrid machine learning model that combines the strengths of **quantum computing** (via PennyLane) and **classical deep learning** (via PyTorch) to classify the famous **Iris flower dataset**.
 
-Trained over 20 epochs, QClassiQ achieves an impressive **93.3% accuracy**, outperforming several baseline models — while using **fewer parameters**.
+Trained over 20 epochs, QClassiQ achieves an impressive **96.67% accuracy**, outperforming several baseline models — while using **fewer parameters**.
 
 ---
 
