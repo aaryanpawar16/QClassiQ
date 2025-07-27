@@ -24,9 +24,11 @@ Trained over 20 epochs, QClassiQ achieves an impressive **93.3% accuracy**, outp
 
 git clone https://github.com/aaryanpawar16/QClassiQ.git
 cd QClassiQ
+
 2. Create virtual environment
 python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+
 3. Install dependencies
 pip install -r requirements.txt
 🧪 Run the Model
