@@ -37,7 +37,9 @@ python qclassiq.py
 streamlit run app.py
 
 📂 Project Structure
+
 QClassiQ/
+
 ├── qclassiq.py          # Hybrid model training script
 
 ├── app.py               # Streamlit UI
