@@ -2,7 +2,7 @@ QClassiQ - The Interactive Quantum Simulator
 QClassiQ is an intuitive, web-based platform that demystifies quantum computing by allowing users to visually build, simulate, and understand quantum circuits in real-time, right from their browser.
 
 Watch Demo on YouTube:
-(QClassiQ)[https://youtu.be/iuT6PGkJWz4]
+QClassiQ[https://youtu.be/iuT6PGkJWz4]
 
 🚀 About The Project
 Quantum computing holds the promise of solving some of the world's most complex problems, but its steep learning curve creates a significant barrier to entry. Aspiring developers and researchers often get bogged down by complex mathematics and boilerplate code before they can even run a simple experiment.
