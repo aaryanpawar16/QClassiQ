@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Keyframe Animations --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Upgraded to an animated gradient background */
+  background: linear-gradient(-45deg, #1a202c, #2d3748, #1a202c, #4a5568);
+  background-size: 400% 400%;
+  animation: moveGradient 15s ease infinite;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 20px 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.logo-icon {
+  color: #a78bfa;
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 8px #a78bfa);
+  transition: transform 0.3s ease;
+}
+
+header:hover .logo-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+h1 {
+  color: #f7fafc;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+/* --- Card Styles with Animations & Glow --- */
+.controls-card, .builder-card, .output-section {
+  background-color: rgba(45, 55, 72, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #4a5568;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  /* Animation properties */
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 0.5s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Staggering the animation for a nice effect */
+.controls-card { animation-delay: 0.2s; }
+.builder-card { animation-delay: 0.4s; }
+.results-container { animation-delay: 0.6s; }
+
+
+/* Interactive Glow Effect */
+.controls-card::before, .builder-card::before, .output-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.controls-card:hover::before, .builder-card:hover::before, .output-section:hover::before {
+    opacity: 1;
+}
+
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #cbd5e0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #4a5568;
+  padding-bottom: 10px;
+}
+
+/* --- Controls Section --- */
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.input-section label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #a0aec0;
+}
+
+.input-section input {
+  padding: 8px 12px;
+  margin-left: 10px;
+  border: 1px solid #4a5568;
+  background-color: #1a202c;
+  color: #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 60px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section input:focus {
+  outline: none;
+  border-color: #805ad5;
+  box-shadow: 0 0 0 3px rgba(128, 90, 213, 0.4);
+}
+
+.run-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #805ad5, #a78bfa);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(128, 90, 213, 0.3);
+}
+
+.run-button:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 7px 20px rgba(128, 90, 213, 0.4);
+}
+
+.run-button:disabled {
+  background: #4a5568;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* --- Circuit Builder Section --- */
+.gate-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px;
+  background: rgba(26, 32, 44, 0.7);
+  border-radius: 8px;
+}
+
+.gate-layer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.layer-label {
+  font-weight: 600;
+  color: #a0aec0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  padding-right: 10px;
+  border-right: 2px solid #4a5568;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.gate-qubit-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.qubit-label {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.gate-select {
+  padding: 6px 10px;
+  background-color: #4a5568;
+  color: #e2e8f0;
+  border: 1px solid #718096;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.gate-select:hover {
+  background-color: #718096;
+  transform: scale(1.05);
+}
+
+/* --- Results Section --- */
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 0.5s ease-out 0.6s forwards;
+}
+
+.output-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e0;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.circuit-img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  background-color: #f7fafc;
+  padding: 15px;
+  border: 1px solid #e2e8f0;
+}
+
+/* --- General Utility --- */
+.spinner-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #a0aec0;
+}
+
+.spinner {
+  border: 4px solid #4a5568;
+  border-top: 4px solid #a78bfa;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.message {
+  margin-top: 20px;
+  text-align: center;
+  color: #9ae6b4;
+  font-size: 1.1rem;
+  font-weight: 500;
+}

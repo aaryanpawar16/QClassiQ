@@ -1,0 +1,6 @@
+flask
+flask-cors
+qiskit
+numpy
+matplotlib
+pylatexenc
